@@ -10,7 +10,7 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ text, author, event }) => {
   return (
-    <Card className="bg-white border border-emcee-pink shadow-md h-full">
+    <Card className="bg-white/90 border border-emcee-pink shadow-md h-full">
       <CardContent className="p-6">
         <div className="text-emcee-darkPink text-4xl font-serif mb-4">"</div>
         <p className="text-emcee-darkGray/80 mb-4 italic">
@@ -45,22 +45,24 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-16 px-4 bg-white">
+    <section id="testimonials" className="py-16 px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-emcee-darkGray">Testimonials</h2>
-        <p className="text-center text-emcee-darkGray/80 mb-12 max-w-2xl mx-auto">
-          Don't just take my word for it. Here's what my clients have to say about my emcee services.
-        </p>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Testimonial 
-              key={index}
-              text={testimonial.text}
-              author={testimonial.author}
-              event={testimonial.event}
-            />
-          ))}
+        <div className="content-section py-8 px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-emcee-darkGray">Testimonials</h2>
+          <p className="text-center text-emcee-darkGray/80 mb-12 max-w-2xl mx-auto">
+            Don't just take my word for it. Here's what my clients have to say about my emcee services.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Testimonial 
+                key={index}
+                text={testimonial.text}
+                author={testimonial.author}
+                event={testimonial.event}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

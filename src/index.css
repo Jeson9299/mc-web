@@ -54,7 +54,8 @@
   }
 
   body {
-    @apply bg-white text-emcee-darkGray font-poppins;
+    @apply bg-gradient-to-b from-pink-100 via-purple-50 to-blue-50 text-emcee-darkGray font-poppins;
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
@@ -67,4 +68,35 @@
   background-image: 
     radial-gradient(at 70% 20%, hsla(340,100%,97%,1) 0px, transparent 50%),
     radial-gradient(at 80% 80%, hsla(340,100%,97%,0.8) 0px, transparent 50%);
+}
+
+.dreamy-bg {
+  background-image: url('/lovable-uploads/27698c3a-e90a-424d-bd64-83373f0938d8.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cloud-overlay {
+  position: relative;
+}
+
+.cloud-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/lovable-uploads/27698c3a-e90a-424d-bd64-83373f0938d8.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.content-section {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 1rem;
 }

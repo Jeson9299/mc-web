@@ -9,9 +9,9 @@ import Footer from '../components/Footer';
 
 const Index: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen dreamy-bg">
       {/* Navigation */}
-      <nav className="bg-white py-4 px-6 shadow-sm sticky top-0 z-50">
+      <nav className="bg-white/80 backdrop-blur-sm py-4 px-6 shadow-sm sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <div className="font-playfair text-xl font-bold text-emcee-darkGray">
             JK
