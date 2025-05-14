@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,38 +10,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { toast } from 'sonner';
 
 const BookingSection: React.FC = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", { ...formData, eventDate: date });
-    toast.success("Booking request received! I'll get back to you soon.");
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      eventType: '',
-      message: ''
-    });
-    setDate(undefined);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
 
   return (
     <section id="booking" className="py-16 px-4">
@@ -55,7 +25,15 @@ const BookingSection: React.FC = () => {
           
           <Card className="bg-white/90 shadow-lg border-none">
             <CardContent className="p-6 sm:p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://formsubmit.co/jesondsouzadx@gmail.com"
+                method="POST"
+                className="space-y-6"
+              >
+                <input type="hidden" name="_next" value="http://localhost:8080" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="eventDate" value={date ? format(date, 'PPP') : ''} />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
@@ -63,8 +41,6 @@ const BookingSection: React.FC = () => {
                       id="name" 
                       name="name"
                       placeholder="Your Name"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       className="border-emcee-pink focus:border-emcee-darkPink"
                     />
@@ -77,8 +53,6 @@ const BookingSection: React.FC = () => {
                       name="email"
                       type="email"
                       placeholder="your.email@example.com" 
-                      value={formData.email}
-                      onChange={handleChange}
                       required
                       className="border-emcee-pink focus:border-emcee-darkPink"
                     />
@@ -90,39 +64,35 @@ const BookingSection: React.FC = () => {
                       id="phone" 
                       name="phone"
                       placeholder="Your Phone Number" 
-                      value={formData.phone}
-                      onChange={handleChange}
                       required
                       className="border-emcee-pink focus:border-emcee-darkPink"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="eventType">Event Type</Label>
-                    <Select 
-                      onValueChange={(value) => setFormData(prev => ({ ...prev, eventType: value }))}
-                      value={formData.eventType}
+                    <select
+                      name="eventType"
+                      required
+                      className="w-full border-emcee-pink focus:border-emcee-darkPink rounded-md p-2"
                     >
-                      <SelectTrigger className="border-emcee-pink focus:border-emcee-darkPink">
-                        <SelectValue placeholder="Select Event Type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="wedding">Wedding</SelectItem>
-                        <SelectItem value="birthday">Birthday</SelectItem>
-                        <SelectItem value="corporate">Corporate Event</SelectItem>
-                        <SelectItem value="holy-communion">First Holy Communion</SelectItem>
-                        <SelectItem value="christening">Christening</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                      <option value="">Select Event Type</option>
+                      <option value="wedding">Wedding</option>
+                      <option value="birthday">Birthday</option>
+                      <option value="corporate">Corporate Event</option>
+                      <option value="holy-communion">First Holy Communion</option>
+                      <option value="christening">Christening</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
-                  
-                  <div className="space-y-2">
+
+                  <div className="space-y-2 md:col-span-2">
                     <Label htmlFor="date">Event Date</Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
                           variant="outline"
+                          type="button"
                           className={cn(
                             "w-full justify-start text-left font-normal border-emcee-pink hover:bg-emcee-pink/10",
                             !date && "text-muted-foreground"
@@ -151,8 +121,6 @@ const BookingSection: React.FC = () => {
                     id="message"
                     name="message" 
                     placeholder="Tell me more about your event and any special requirements"
-                    value={formData.message}
-                    onChange={handleChange}
                     rows={4}
                     className="border-emcee-pink focus:border-emcee-darkPink"
                   />

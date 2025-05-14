@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-6 mb-4">
-              <a href="#" aria-label="Instagram" className="text-emcee-darkGray hover:text-emcee-darkGray/70 transition-colors">
+              <a href="https://www.instagram.com/emceejessicakakkanad/" aria-label="Instagram" className="text-emcee-darkGray hover:text-emcee-darkGray/70 transition-colors">
                 <Instagram size={24} />
               </a>
               <a href="#" aria-label="Facebook" className="text-emcee-darkGray hover:text-emcee-darkGray/70 transition-colors">
@@ -30,11 +30,11 @@ const Footer: React.FC = () => {
             <div className="space-y-1">
               <div className="flex items-center text-emcee-darkGray/80">
                 <Mail size={16} className="mr-2" />
-                <span>contact@emceejessica.com</span>
+                <span>contact@emceejessicakakkanad.com</span>
               </div>
               <div className="flex items-center text-emcee-darkGray/80">
                 <Phone size={16} className="mr-2" />
-                <span>+91 98765 43210</span>
+                <span>+91 98671 15040</span>
               </div>
             </div>
           </div>
