@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { CakeSlice, Users, Heart, Bell, Gift } from 'lucide-react';
+import { CakeSlice, Users, Heart, Bell, Gift, Briefcase } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
@@ -49,6 +49,11 @@ const ServicesSection: React.FC = () => {
       title: "Christenings",
       icon: <Gift size={32} className="text-emcee-darkGray" />,
       description: "Welcome your little one with a beautifully hosted christening ceremony."
+    },
+    {
+      title: "Corporate Events",
+      icon: <Briefcase size={32} className="text-emcee-darkGray" />,
+      description: "Professional hosting for your meetings, conferences, and company celebrations."
     }
   ];
 
