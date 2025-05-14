@@ -30,7 +30,7 @@ const BookingSection: React.FC = () => {
                 method="POST"
                 className="space-y-6"
               >
-                <input type="hidden" name="_next" value="http://localhost:8080" />
+                <input type="hidden" name="_next" value="http://localhost:8080/ThankYou" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="eventDate" value={date ? format(date, 'PPP') : ''} />
 
