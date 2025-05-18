@@ -32,7 +32,7 @@ const BookingSection: React.FC = () => {
                 className="space-y-6"
               >
                 {/* Update this to your actual domain */}
-                <input type="hidden" name="_next" value="https://emceejessicakakkanad.com/thankyou" />
+                <input type="hidden" name="_next" value="https://www.emceejessicakakkanad.com/thankyou" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="eventDate" value={date ? format(date, "PPP") : ""} />
 
