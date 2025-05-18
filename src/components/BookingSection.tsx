@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
@@ -16,13 +15,15 @@ const BookingSection: React.FC = () => {
 
   return (
     <section id="booking" className="py-16 px-4">
-      <div className="container mx-auto max-w-4xl">
+      <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6">
         <div className="content-section py-8 px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-emcee-darkGray">Book Me For Your Event!</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-emcee-darkGray">
+            Book Me For Your Event!
+          </h2>
           <p className="text-center text-emcee-darkGray/80 mb-12 max-w-2xl mx-auto">
             Ready to make your event unforgettable? Fill out the form below and I'll get back to you soon.
           </p>
-          
+
           <Card className="bg-white/90 shadow-lg border-none">
             <CardContent className="p-6 sm:p-8">
               <form
@@ -30,40 +31,41 @@ const BookingSection: React.FC = () => {
                 method="POST"
                 className="space-y-6"
               >
-                <input type="hidden" name="_next" value="http://localhost:8080/ThankYou" />
+                {/* Update this to your actual domain */}
+                <input type="hidden" name="_next" value="https://yourdomain.com/thankyou" />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="eventDate" value={date ? format(date, 'PPP') : ''} />
+                <input type="hidden" name="eventDate" value={date ? format(date, "PPP") : ""} />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input 
-                      id="name" 
+                    <Input
+                      id="name"
                       name="name"
                       placeholder="Your Name"
                       required
                       className="border-emcee-pink focus:border-emcee-darkPink"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input 
-                      id="email" 
+                    <Input
+                      id="email"
                       name="email"
                       type="email"
-                      placeholder="your.email@example.com" 
+                      placeholder="your.email@example.com"
                       required
                       className="border-emcee-pink focus:border-emcee-darkPink"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input 
-                      id="phone" 
+                    <Input
+                      id="phone"
                       name="phone"
-                      placeholder="Your Phone Number" 
+                      placeholder="Your Phone Number"
                       required
                       className="border-emcee-pink focus:border-emcee-darkPink"
                     />
@@ -114,19 +116,19 @@ const BookingSection: React.FC = () => {
                     </Popover>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message / Special Requests</Label>
-                  <Textarea 
+                  <Textarea
                     id="message"
-                    name="message" 
+                    name="message"
                     placeholder="Tell me more about your event and any special requirements"
                     rows={4}
                     className="border-emcee-pink focus:border-emcee-darkPink"
                   />
                 </div>
-                
-                <Button 
+
+                <Button
                   type="submit"
                   className="w-full bg-emcee-pink hover:bg-emcee-darkPink text-emcee-darkGray font-semibold"
                 >

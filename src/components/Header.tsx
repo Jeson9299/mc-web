@@ -4,7 +4,7 @@ import React from 'react';
 const Header: React.FC = () => {
   return (
     <header className="py-20 md:py-28 px-4 text-center">
-      <div className="container mx-auto">
+      <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6">
         <div className="content-section py-8 px-4 md:px-8 mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-emcee-darkGray animate-fade-in">
             Emcee Jessica Kakkanad

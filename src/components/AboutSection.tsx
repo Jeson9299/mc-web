@@ -8,7 +8,7 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-16 px-4">
       <div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6">
-        <div className="content-section py-8 px-4 md:px-8">
+        <div className="content-section py-6 px-5 sm:px-6 md:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-emcee-darkGray">About Me</h2>
           
           <Card className="overflow-hidden shadow-lg bg-white/90 border-none">

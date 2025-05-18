@@ -46,7 +46,7 @@ const TestimonialsSection: React.FC = () => {
 
   return (
     <section id="testimonials" className="py-16 px-4">
-      <div className="container mx-auto">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="content-section py-8 px-4 md:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-emcee-darkGray">Testimonials</h2>
           <p className="text-center text-emcee-darkGray/80 mb-12 max-w-2xl mx-auto">
