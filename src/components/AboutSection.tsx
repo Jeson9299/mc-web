@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
                 <div className="md:w-1/3 w-full">
                   <div className="bg-emcee-lightGray aspect-square flex items-center justify-center">
                     <img 
-                      src="about.jpg" 
+                      src="/about.jpg" 
                       alt="Jessica Kakkanad" 
                       //className="object-cover h-full w-full opacity-80"
                     />
