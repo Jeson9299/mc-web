@@ -27,7 +27,7 @@ const BookingSection: React.FC = () => {
           <Card className="bg-white/90 shadow-lg border-none">
             <CardContent className="p-6 sm:p-8">
               <form
-                action="https://formsubmit.co/jesondsouzadx@gmail.com"
+                action="https://formsubmit.co/emceejessicakakkanad@gmail.com"
                 method="POST"
                 className="space-y-6"
               >
